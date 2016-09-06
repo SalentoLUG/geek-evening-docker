@@ -1,0 +1,21 @@
+{
+  "name": "test_reveal",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Francesco Valente <francesco83.valente@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "reveal.js": "=>3.2.0"
+  }
+}
