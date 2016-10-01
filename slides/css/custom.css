@@ -1,0 +1,83 @@
+body {
+    background: #002b3;
+    background-color: #2F5F70;
+}
+
+.slides h1 {
+    text-transform: none;
+    background: transparent;
+    border-bottom: 2px solid;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.slides h2 {
+    text-transform: none;
+    background: transparent;
+    border-bottom: 2px solid;
+    margin-bottom: 50px;
+    padding-left: 20px;
+}
+
+section {
+    background: darkslategrey;
+}
+
+.slides a {
+    font-weight: bold;
+    color: darkgoldenrod !important;
+}
+
+.slide p {
+    background: trasparent;
+    padding: 0px 30px;
+}
+
+.slide ul {
+    background: trasparent;
+    padding: 0px 30px;
+}
+
+.reveal small {
+    font-size: 0.8em;
+}
+
+.reveal .slides {
+    text-align: left;
+    padding: 20px;
+}
+
+.mark {
+    border: 1px dashed black !important;
+    margin: 20px !important;
+    padding: 15px !important;
+    background: darkolivegreen;
+}
+
+img[alt=small]{
+    width: 40%;
+    float: left;
+    padding-right: 20px;
+    border-color: transparent !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+img[alt=medium]{
+    width: 45%;
+    float: center !important;
+    border-color: transparent !important;
+    background: transparent !important;
+    //box-shadow: none !important;
+}
+
+img[alt=big]{
+    float: center !important;
+    border-color: transparent !important;
+    background: transparent !important;
+    //box-shadow: none !important;
+}
+
+.underline {
+    text-decoration: underline;
+}
