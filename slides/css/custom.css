@@ -78,6 +78,14 @@ img[alt=big]{
     //box-shadow: none !important;
 }
 
+img[alt=large_width]{
+    float: center !important;
+    border-color: transparent !important;
+    background: transparent !important;
+    //box-shadow: none !important;
+    width: 80%;
+    height: 200px;
+}
 .underline {
     text-decoration: underline;
 }

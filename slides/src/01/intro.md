@@ -115,7 +115,22 @@ Real example:
 * More containers pre machine than VMs
 * Greater portability
 
+----sub
+
+## Benefits of Docker
+
+* Separation of concerns
+  * developers focus on building their apps
+  * system admins focus on deployment
+* Fast deployment cycle
+* Application portability
+  * build in one environment, ship to another
+* Scalability
+  * easly spin up new containers if needed
+* Run more apps on one host machine
+
 ----right
+
 
 ## Docker Platform: overview and terminology
 
@@ -139,6 +154,17 @@ containers to be built, shipped and run.</div>
 * It uses Linux Kernel namespaces and control groups
 
 * Namespaces, particularly, create isolated workspaces
+
+----sub
+
+## Docker orchestation tools
+
+* Docker Machine
+  - tool that provisions Docker hosts and installs the Docker Engine on them
+* Docker Swarm
+  - tool that clusters many Engines and schedules containers
+* Docker Compose
+  - tool to create and manage multi-container applications
 
 ----sub
 
@@ -172,7 +198,7 @@ Note:
 ## Installation
 
 Prerequisites:
-* Docker requires a 64-bit installation of OS
+* Docker requires a 64-bit OS installation
 * kernel must be 3.10 at minimum
 <br><br><br>
 <small>
@@ -236,23 +262,61 @@ $ sudo apt-get install docker-engine
 
 ----sub
 
-### Images
+## Docker Architechture
+
+* client/server architechture
+* client send inputs to the deamon
+* deamon build, run and distributes containers
+* client and server run on same or different host
+
+```
+$ docker version
+Client:
+ Version:      1.12.1
+ API version:  1.24
+ Go version:   go1.6.3
+ Git commit:   23cf638
+ Built:        Thu Aug 18 05:22:43 2016
+ OS/Arch:      linux/amd64
+
+Server:
+ Version:      1.12.1
+ API version:  1.24
+ Go version:   go1.6.3
+ .....
+
+```
+
+----right
+
+## Containers and Images
+
+<small>
+Images:
+* **read only** template used to create containers
+* built by you or other Docker users
+* stored in Docker Hub or local registry
+
+Containers:
+* all library needed to run an application
+* based on one or more images
+* isolated workspace
+</small>
 
 ----sub
 
-### Containers
-
-----sub
-
-### Repositories
-
-----sub
-
-### Docker Hub
-
-----sub
-
-### Docker orchestation tools
+## Registry (Docker Hub)
+<div class="mark"><strong>Docker Hub</strong> is the public registry that contains
+a large number of images available for use.
+</div>
+<small>
+* collection of repositories (ubuntu, nginx, mysql...)
+* each repository contains a lot of images
+</small>
+<center>
+![large_width](/src/images/docker-hub.png)
+[https://hub.docker.com/explore/](https://hub.docker.com/explore/)
+</center>
 
 ----right
 
