@@ -318,10 +318,92 @@ a large number of images available for use.
 [https://hub.docker.com/explore/](https://hub.docker.com/explore/)
 </center>
 
-----right
+----sub
 
-## Intro to Images
+## Images
+
+![big](/src/images/docker-hub2.png)
+
+----sub
+
+## Images
+
+![big](/src/images/docker-hub3.png)
+
+----sub
+
+## Display local images
+
+* run **docker images**
+* when creating a container _nginx_ will attempt to use a local image first, but
+  if no local image is found, docker daemon search on registry
+
+![big](/src/images/docker-images.png)
+
+----sub
+
+## Image tags
+Notes:
+<small>
+* images are specified by **repository:tag**
+* the same image may have multiple tags
+* the default tag is **latest**
+* look up the repository on Docker Hub to see what tags are available
+</small>
+![big](/src/images/docker-hub4.png)
+
 
 ----right
 
 ## Getting started with Containers
+
+* To create a container, use **docker run** command!!!
+
+* Syntax:
+
+  <small>
+    _docker run [options] [image] [command] [args]_
+  </small>
+
+* Examples:
+
+```
+docker run ubuntu:14.04 echo "Hello docker"
+
+docker run -it ubuntu /bin/bash
+
+```
+
+----sub
+
+## Getting started with Containers
+<center>
+<video width="1000" height="500" controls autoplay>
+<source src="../video/docker_run1.mp4" type="video/mp4">
+</video>
+</center>
+
+----sub
+
+## Container with terminal
+
+With docker run use **-i** e **-t** options:
+* the **-i** flag connect STDIN on the container
+* the **-t** flag specifies to get a pseudo-terminal
+
+<small>
+**NOTE**: you need to run a terminal process as you command (es: /bin/bash)
+</small>
+
+```
+docker run -i -t ubuntu:14.04 /bin/bash
+```
+
+----sub
+
+## Container with terminal
+<center>
+<video width="1000" height="500" controls autoplay>
+<source src="../video/docker_run2.mp4" type="video/mp4">
+</video>
+</center>
