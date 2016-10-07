@@ -407,3 +407,120 @@ docker run -i -t ubuntu:14.04 /bin/bash
 <source src="../video/docker_run2.mp4" type="video/mp4">
 </video>
 </center>
+
+----sub
+
+## Container processes
+
+![small](/src/images/container_processes.png)
+<small>
+* command's process is always<br>
+  PID 1 inside the container<br><br>
+* container only runs as long as the<br>
+  command process is running
+</small>
+
+----sub
+
+## Container ID
+
+* containers can be specified using their ID or name
+* long ID or short ID
+* short ID or name can be obtained using **docker ps** to list containers
+* long ID obtained by inspecting a container
+
+----sub
+
+## Find your container
+
+* use **docker ps** to list running containers
+* the **-a** flag to list all containers (including stopped)
+
+![big](/src/images/docker_ps.png)
+
+----sub
+
+## Running in detach mode
+
+* use **-d** flag
+* to observe output use **docker logs [container id/name]**
+
+```
+docker run -d ubuntu:14.04 ping 127.0.0.1 -c 50
+```
+
+----sub
+
+## Running in detach mode
+
+<center>
+<video width="1000" height="500" controls autoplay>
+<source src="../video/docker_detach.mp4" type="video/mp4">
+</video>
+</center>
+
+----sub
+
+## Example: A web application inside a container
+
+* use **-p** flag to map containers ports to host ports
+
+```
+docker run -P -d eboraas/apache-php
+
+docker run -p 80:80 -p 443:443 -d eboraas/apache-php
+```
+
+![big](/src/images/docker_ports.png)
+
+----sub
+
+## Example: A web application inside a container
+
+- use **-v** flag to map containers volumes
+
+```
+docker run -p 80:80 -p 443:443 -d \
+           -v /home/angelo/mysite/:/var/www/html/ \
+           eboraas/apache-php
+```
+
+----sub
+
+## Example: A web application inside a container
+
+- use **--name** to name container
+- use **--link** to link first container to another
+
+```zsh
+docker run --name dbcontainer -e MYSQL_ROOT_PASSWORD=my-secret-pw -d \
+           mysql
+
+
+docker run -p 80:80 -p 443:443 -d \
+           -v /home/angelo/mysite/:/var/www/html/ \
+           --name webcontainer --link dbcontainer:db
+           eboraas/apache-php
+```
+
+----right
+
+## Resources
+
+* Docker hub: [https://hub.docker.com/](https://hub.docker.com/)
+* Docker Documentation: [https://docs.docker.com/](https://docs.docker.com/)
+  * [docker run](https://docs.docker.com/engine/reference/run/)
+  * [docker ps](https://docs.docker.com/engine/reference/commandline/ps/)
+  * [docker images](https://docs.docker.com/engine/reference/commandline/images/)
+
+----sub
+
+## Next?
+
+Next geek evening:
+* build image
+* Dockerfile
+* manage images and containers
+* volumes
+* basic container networking
+* docker-compose

@@ -1,0 +1,13 @@
+docker run -i -t ubuntu:14.04 /bin/bash
+ls
+adduser angelo
+adduser angelo sudo
+su angelo
+sudo apt-get update
+sudo apt-get install vim
+cd ; vim pippo.txt
+exit
+
+docker run -i -t ubuntu:14.04 /bin/bash
+su angelo
+.....

@@ -1,0 +1,10 @@
+docker run -d ubuntu:14.04 ping 127.0.0.1 -c 50
+
+docker ps 
+
+docker logs ID
+
+docker logs -f ID 
+
+docker ps
+
