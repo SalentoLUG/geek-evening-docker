@@ -1,3 +1,16 @@
+## In this talk
+
+* What's docker?
+* Containers vs VM
+* Docker Engine
+  * Installation
+  * Registry
+  * Containers
+  * Images
+* A web application as CaaS
+
+----sub
+
 ## What is Docker
 
 <div class="mark">**Docker** is a platform for developing, shipping, and running applications using containers
@@ -23,7 +36,7 @@ The Docker Platform consists of multiple products/tools:
 ![small](/src/images/past1_2.png)
 <small>
 Problems:
-* slow deployment times
+* long deployment times
 * huge costs
 * wasted resources
 * difficult to scale or to migrate
@@ -192,6 +205,14 @@ Note:
    or combinations of these resources — among user-defined groups of tasks (processes)
    running on a system. You can monitor the cgroups you configure, deny cgroups access
    to certain resources, and even reconfigure your cgroups dynamically on a running system.
+
+----sub
+
+## Namespaces reality
+
+<center>
+![big](/src/images/security-cat.jpg)
+</center>
 
 ----sub
 
@@ -378,7 +399,7 @@ docker run -it ubuntu /bin/bash
 
 ## Getting started with Containers
 <center>
-<video width="1000" height="500" controls autoplay>
+<video width="1000" height="500" controls>
 <source src="../video/docker_run1.mp4" type="video/mp4">
 </video>
 </center>
@@ -403,7 +424,7 @@ docker run -i -t ubuntu:14.04 /bin/bash
 
 ## Container with terminal
 <center>
-<video width="1000" height="500" controls autoplay>
+<video width="1000" height="500" controls >
 <source src="../video/docker_run2.mp4" type="video/mp4">
 </video>
 </center>
@@ -454,12 +475,28 @@ docker run -d ubuntu:14.04 ping 127.0.0.1 -c 50
 ## Running in detach mode
 
 <center>
-<video width="1000" height="500" controls autoplay>
+<video width="1000" height="500" controls >
 <source src="../video/docker_detach.mp4" type="video/mp4">
 </video>
 </center>
 
 ----sub
+
+## Example: A web application inside a container
+
+<center><h3>GOAL</h3>
+```
+MAKE A PHP WEB APPLICATION WITH MYSQL DATABASE
+```
+</center>
+
+we need:
+
+* container web (apache) with php
+* container mysql
+
+----sub
+
 
 ## Example: A web application inside a container
 
@@ -505,13 +542,27 @@ docker run -p 80:80 -p 443:443 -d \
 
 ----right
 
-## Resources
+## Results:
 
-* Docker hub: [https://hub.docker.com/](https://hub.docker.com/)
-* Docker Documentation: [https://docs.docker.com/](https://docs.docker.com/)
-  * [docker run](https://docs.docker.com/engine/reference/run/)
-  * [docker ps](https://docs.docker.com/engine/reference/commandline/ps/)
-  * [docker images](https://docs.docker.com/engine/reference/commandline/images/)
+<center>
+![big](/src/images/docker-fire.gif)
+</center>
+
+----sub
+
+## Real Example: A web application inside a container
+
+<center>
+![big](/src/images/docker-containers-schema.png)
+</center>
+
+----sub
+
+## Real Example: A web application inside a container
+
+<center>
+![big](/src/images/docker-containers-schema2.png)
+</center>
 
 ----sub
 
@@ -524,3 +575,22 @@ Next geek evening:
 * volumes
 * basic container networking
 * docker-compose
+
+----sub
+
+## Final goal
+
+<center>
+![big](/src/images/finaly.jpg)
+</center>
+
+----sub
+
+## Resources
+
+* Docker hub: [https://hub.docker.com/](https://hub.docker.com/)
+* Docker Documentation: [https://docs.docker.com/](https://docs.docker.com/)
+  * [docker run](https://docs.docker.com/engine/reference/run/)
+  * [docker ps](https://docs.docker.com/engine/reference/commandline/ps/)
+  * [docker images](https://docs.docker.com/engine/reference/commandline/images/)
+* Thanks to "Docker self traning": [link](https://training.docker.com/self-paced-training)
