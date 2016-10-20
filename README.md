@@ -9,10 +9,19 @@ Slide dei talk su docker
 
 Per visualizzare le slide e' necessario installare i seguenti pacchetti:
 
+* git
 * docker-engine
 
-Seguire le istruzioni riportate al link seguente per installarlo sul proprio
+Seguire le istruzioni riportate al link seguente per installare docker sul proprio
 sistema operativo: [https://docs.docker.com/engine/installation/](https://docs.docker.com/engine/installation/)
+
+## Download del repository
+
+Da console digitare:
+
+```
+git clone https://github.com/SalentoLUG/geek-evening-docker.git
+```
 
 ## Visualizzazione delle slide
 
