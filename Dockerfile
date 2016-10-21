@@ -1,12 +1,14 @@
 FROM node:6-slim
-# replace this with your application's default port
 EXPOSE 8888
 
 ADD slides /opt/slides
 
 RUN cd /opt/slides && \
+    apt-get update && apt-get install -y bzip2 git && \
+    npm install && \
     npm install -g bower && \
-    bower --allow-root install && \
-    npm install -g grunt-cli
+    npm install -g grunt-cli && \
+    bower --allow-root install
 
-CMD cd /opt/slides && grunt serve
+WORKDIR /opt/slides
+CMD grunt serve
