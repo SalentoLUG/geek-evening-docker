@@ -137,13 +137,16 @@ Commands:
 
 ## Start and stop containers
 
-* Find containers with **docker ps**
+* Find containers with **docker ps -a**
+
+![](/src/images/docker-ps-a.png)
+
 * Start o stop with:
 
 ```
-docker start ff3badc1e7df
+docker start f0671136bac3
 
-docker stop gloomy_swanson
+docker stop jovial_yonath
 ```
 
 ----sub
@@ -179,10 +182,12 @@ docker rm container_name_or_id
 docker images
 REPOSITORY   TAG    IMAGE ID         CREATED           SIZE
 prova        1.0    32f4c4fc3b51     16 minutes ago    226.7 MB
+prova        2.0    837ab3028e32     10 minutes ago    230.7 MB
 
-docker rmi prova
-or
 docker rmi 32f4c4fc3b51
+or
+docker rmi prova   (ERRORE)
+
 ```
 * if an image has multiple tag, remove each tag.
 
@@ -229,6 +234,8 @@ RUN apt-get install -y vim
 RUN apt-get install -y htop
 ```
 
+<br><small><em>Example 01 in the directory **/02/examples/01**</em></small>
+
 ----sub
 
 ## RUN instruction
@@ -241,6 +248,8 @@ RUN apt-get update && apt-get install vim \
     htop \
     nano
 ```
+<br><br>
+**NB:** c'e' un problema/errore!!! A voi la ricerca!
 
 ----sub
 
@@ -258,7 +267,11 @@ docker build -t [repository:tag] [path]
 
 ## Docker build Example
 
-Open a terminal
+<center>
+<video width="1000" height="500" controls>
+<source src="../video/docker_build.mp4" type="video/mp4">
+</video>
+</center>
 
 ----sub
 
@@ -315,12 +328,6 @@ CMD ["localhost"]
 
 ----sub
 
-## CMD vs ENTRYPOINT
-
-Open a terminal if it's necessary
-
-----sub
-
 ## USER and WORKDIR instructions
 
 The USER instruction sets the user name or UID to use when running the
@@ -351,6 +358,7 @@ COPY test_dir /absoluteDir/     # adds "test" to /absoluteDir/
 ```
 
 ADD copies new files, directory and remote url into image filesystem.
+(auto-extract compressed file)
 
 ```
 ...
@@ -537,7 +545,7 @@ docker run -d --name web --link database:db nginx
 <div class="mark">Docker compose is a tool for creating and managing multi container
 application.</div>
 
-* All containrs are defined in a single file named **docker-compose.yml**
+* All containers are defined in a single file named **docker-compose.yml**
 * Usually each container runs a particolar component/service of your application.
 * Container links are defined
 * Compose will spin all containers in a single command
@@ -619,7 +627,7 @@ web:
 
 * Use **docker-compose up**
 * Up command will:
-  - build the image for eache service (if image doesn't exists)
+  - build the image for each service (if image doesn't exists)
   - create and start containers
 
 ----sub
