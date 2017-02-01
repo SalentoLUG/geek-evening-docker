@@ -4,10 +4,11 @@ FROM ubuntu:14.04
 MAINTAINER Angelo D'Autilia <sydro@salug.it>
 
 RUN apt-get update && \
-    apt-get install -y php5 libapache2-mod-php5 php5-mysql php5-cli && \
+    apt-get install -y php5 libapache2-mod-php5 php5-mysql php5-cli mysql-client && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-ADD index.html /var/www/html/
+ADD files-www/index.html /var/www/html/
+ADD files-www/immagine.jpg /var/www/html/
 ADD apache2.conf /etc/apache2/apache2.conf
 
 EXPOSE 80

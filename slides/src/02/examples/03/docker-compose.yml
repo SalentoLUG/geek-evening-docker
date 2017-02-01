@@ -1,7 +1,9 @@
 mysql:
-  build: .
+  image: mysql:5.5
   container_name: database
-  dockerfile : Dockerfile.mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: "test123"
+    MYSQL_DATABASE: "pippodb"
   volumes:
     - ./mysql_data:/var/lib/mysql
 
@@ -15,6 +17,5 @@ web:
   links:
     - mysql:db
   volumes:
-    - ./configs/apache-vhost.conf:/etc/apache2/sites-available/000-default.conf
-    - ./configs/php.ini:/etc/php5/apache2/php.ini
-    - ./www/sito-online:/var/www/html
+    - ./apache2.conf:/etc/apache2/sites-available/000-default.conf
+    - ./files-www:/var/www/html
