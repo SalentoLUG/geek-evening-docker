@@ -546,7 +546,7 @@ docker run -d --name web --link database:db nginx
 application.</div>
 
 * All containers are defined in a single file named **docker-compose.yml**
-* Usually each container runs a particolar component/service of your application.
+* Usually each container runs a particular component/service of your application.
 * Container links are defined
 * Compose will spin all containers in a single command
 
