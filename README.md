@@ -2,8 +2,8 @@
 
 Slide dei talk su docker
 * Geek 0x28: Introduction to Docker
-* Geek 0xXX: Docker Fundamentals
-* Geek 0xXX: Docker Operations
+* Geek 0x2A: Docker Fundamentals
+* Geek 0xXX: ...
 
 ## Requisiti
 
